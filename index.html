@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>📝MyDocs</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="contenedor">
+            <h1>📝MyDocs📝</h1>
+            <div class="barra-herramientas">
+                <!-- Grupo de archivo -->
+                <div class="grupo-herramientas">
+                    <button onclick="nuevoDocumento()" title="Nuevo documento">
+                        <i class="fas fa-file"></i>
+                    </button>
+                    <button onclick="abrirArchivo()" title="Abrir archivo">
+                        <i class="fas fa-folder-open"></i>
+                    </button>
+                    <input type="file" id="entradaArchivo" style="display: none"
+                        accept=".txt,.html">
+                </div>
+
+                <!-- Grupo de fuente -->
+                <div class="grupo-herramientas">
+                    <select onchange="formatearTexto('fontName', this.value)">
+                        <option value>Fuente</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Impact">Impact</option>
+                    </select>
+                    <select onchange="formatearTexto('fontSize', this.value)">
+                        <option value>Tamaño</option>
+                        <option value="1">8px</option>
+                        <option value="2">10px</option>
+                        <option value="3">12px</option>
+                        <option value="4">14px</option>
+                        <option value="5">18px</option>
+                        <option value="6">24px</option>
+                        <option value="7">36px</option>
+                    </select>
+                </div>
+
+                <!-- Grupo de estilos básicos -->
+                <div class="grupo-herramientas">
+                    <button onclick="formatearTexto('bold')" title="Negrita">
+                        <i class="fas fa-bold"></i>
+                    </button>
+                    <button onclick="formatearTexto('italic')" title="Cursiva">
+                        <i class="fas fa-italic"></i>
+                    </button>
+                    <button onclick="formatearTexto('underline')" title="Subrayado">
+                        <i class="fas fa-underline"></i>
+                    </button>
+                    <button onclick="formatearTexto('strikeThrough')"
+                        title="Tachado">
+                        <i class="fas fa-strikethrough"></i>
+                    </button>
+                </div>
+
+                <!-- Grupo de alineación -->
+                <div class="grupo-herramientas">
+                    <button onclick="formatearTexto('justifyLeft')"
+                        title="Alinear a la izquierda">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button onclick="formatearTexto('justifyCenter')"
+                        title="Centrar">
+                        <i class="fas fa-align-center"></i>
+                    </button>
+                    <button onclick="formatearTexto('justifyRight')"
+                        title="Alinear a la derecha">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+                    <button onclick="formatearTexto('justifyFull')"
+                        title="Justificar">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+
+                <!-- Grupo de listas -->
+                <div class="grupo-herramientas">
+                    <button onclick="formatearTexto('insertUnorderedList')"
+                        title="Lista con viñetas">
+                        <i class="fas fa-list-ul"></i>
+                    </button>
+                    <button onclick="formatearTexto('insertOrderedList')"
+                        title="Lista numerada">
+                        <i class="fas fa-list-ol"></i>
+                    </button>
+                    <button onclick="formatearTexto('indent')"
+                        title="Aumentar sangría">
+                        <i class="fas fa-indent"></i>
+                    </button>
+                    <button onclick="formatearTexto('outdent')"
+                        title="Disminuir sangría">
+                        <i class="fas fa-outdent"></i>
+                    </button>
+                </div>
+
+                <!-- Grupo de colores -->
+                <div class="grupo-herramientas">
+                    <input type="color"
+                        onchange="formatearTexto('foreColor', this.value)"
+                        title="Color de texto">
+                    <input type="color"
+                        onchange="formatearTexto('hiliteColor', this.value)"
+                        title="Color de resaltado">
+                </div>
+
+                <!-- Grupo de formato especial -->
+                <div class="grupo-herramientas">
+                    <button onclick="formatearTexto('insertHorizontalRule')"
+                        title="Línea horizontal">LH</button>
+                    <button onclick="insertarTabla()" title="Insertar tabla">
+                        <i class="fas fa-table"></i>
+                    </button>
+                    <button onclick="insertarEnlace()" title="Insertar enlace">
+                        <i class="fas fa-link"></i>
+                    </button>
+                    <button onclick="formatearTexto('removeFormat')"
+                        title="Eliminar formato">
+                        <i class="fas fa-remove-format"></i>
+                    </button>
+                </div>
+
+                <!-- Grupo de acciones -->
+                <div class="grupo-herramientas">
+                    <button onclick="deshacer()" title="Deshacer">
+                        <i class="fas fa-undo"></i>
+                    </button>
+                    <button onclick="rehacer()" title="Rehacer">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+
+                <div class="grupo-herramientas">
+                    <button id="cambiar-tema" onclick="cambiarTema()"
+                        title="Cambiar tema">
+                        <i class="fas fa-paint-brush"></i> Tema Rosa
+                    </button>
+                </div>
+            </div>
+
+            <!-- Botones de exportación -->
+            <div class="botones-exportacion">
+                <select onchange="manejarCambioPlantilla(this)"
+                    class="selector-plantilla">
+                    <option value="blanco">Página en blanco</option>
+                    <option value="contratoImagen">Contrato de derechos de
+                        imagen</option>
+                    <option value="cartaFormal">Carta formal</option>
+                    <option value="portadaProyecto">Portada de proyecto</option>
+                    <option value="actaReunion">Acta de reunión</option>
+                    <option value="contratoArrendamiento">Contrato de
+                        arrendamiento</option>
+                    <option value="renuncia">Carta de renuncia</option>
+                    <option value="presupuesto">Presupuesto</option>
+                    <option value="cartaRecomendacion">Carta de
+                        recomendación</option>
+                    <option value="contratoTrabajo">Contrato de
+                        trabajo</option>
+                    <option value="cartaAgradecimiento">Carta de
+                        agradecimiento</option>
+                    <option value="invitacion">Carta de invitación</option>
+                </select>
+                <button onclick="guardarComoTexto()">Guardar como TXT</button>
+                <button onclick="guardarComoPdf()">Exportar como PDF</button>
+            </div>
+
+            <div id="vista-previa-pagina">
+                <div id="editor-texto" contenteditable="true"
+                    class="editor"></div>
+            </div>
+        </div>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    </body>
+</html>

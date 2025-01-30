@@ -1,0 +1,316 @@
+/* Estilos generales */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estilos del contenedor principal */
+.contenedor {
+    border-radius: 15px;
+    padding: 1px;
+    width: calc(230mm + 400px);
+    max-width: 95vw;
+    margin: 120px auto 20px;
+    min-height: 500px;
+}
+
+#vista-previa-pagina {
+    padding: 20px;
+    width: 85%;
+    max-width: none;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 45px;
+}
+
+/* Editor de texto con tamaño similar a un folio A4 */
+.editor {
+    width: 210mm;
+    height: 297mm;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 0.5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    overflow-y: auto;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 0;
+}
+
+/* Estilos para las tablas dentro del editor */
+.editor table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.editor td,
+.editor th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    min-width: 50px;
+}
+
+/* Estilos del título */
+h1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: right;
+    color: white;
+    font-size: 24px;
+    font-family: 'Dosis';
+    padding: 15px 0;
+    margin: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Estilos de la barra de herramientas */
+.barra-herramientas {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    z-index: 999;
+}
+
+/* Grupos de herramientas dentro de la barra */
+.grupo-herramientas {
+    display: flex;
+    gap: 5px;
+    border-right: 1px solid #ddd;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+.grupo-herramientas:last-child {
+    border-right: none;
+}
+
+/* Estilos de botones y controles */
+button,
+select,
+input[type="color"] {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover,
+select:hover,
+input[type="color"]:hover {
+    background: #f0f0f0;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+button i {
+    font-size: 14px;
+}
+
+select {
+    min-width: 100px;
+}
+
+input[type="color"] {
+    padding: 2px;
+    width: 40px;
+    height: 30px;
+}
+
+/* Estilos para los botones de acción */
+.botones {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 10px 20px;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.botones button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.botones button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para el selector de plantillas */
+.selector-plantilla {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: white;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.selector-plantilla:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .contenedor {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .barra-herramientas {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .grupo-herramientas {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        justify-content: center;
+    }
+
+    .botones {
+        flex-direction: column;
+    }
+
+    .botones button {
+        width: 100%;
+    }
+
+    #vista-previa-pagina {
+        padding: 20px;
+    }
+
+    .editor {
+        width: 100%;
+        padding: 15mm;
+    }
+}
+
+/* Estilos para el modo de arrastrar y soltar */
+.editor.dragover {
+    border: 2px dashed #ff9a9e;
+    background: rgba(255, 154, 158, 0.1);
+}
+
+/* Estilos para los tooltips */
+[title] {
+    position: relative;
+}
+
+/* Estilos para las listas */
+.editor ul,
+.editor ol {
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+/* Estilos para los enlaces */
+.editor a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.editor a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para la línea horizontal */
+.editor hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* Estilos para el texto seleccionado */
+.editor::selection {
+    background: rgba(255, 154, 158, 0.3);
+}
+
+/* Estilo para botones activos */
+button.active {
+    background: #ff6b6b;
+    color: white;
+    border-color: #ff6b6b;
+}
+
+.botones-exportacion {
+    position: fixed;
+    top: 110px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 998;
+}
+
+.botones-exportacion select,
+.botones-exportacion button {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.botones-exportacion button {
+    color: white;
+    font-weight: bold;
+}
+
+.botones-exportacion button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
