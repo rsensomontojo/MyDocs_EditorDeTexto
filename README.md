@@ -61,7 +61,7 @@
 
 ## Instalación 🛠️
 
-No es necesario instalar nada. ¡Simplemente abre el archivo `index.html` en tu navegador y comienza a usar **MyDocs**!
+No es necesario instalar nada. Descarga los tres archivos y ponlos en una misma y... ¡Simplemente abre el archivo `index.html` en tu navegador y comienza a usar **MyDocs**!
 
 ## Contribuciones 🤝
 
