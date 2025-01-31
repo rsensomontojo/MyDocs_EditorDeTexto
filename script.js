@@ -385,14 +385,18 @@ const plantillas = {
 <p><strong>ASISTENTES:</strong></p>
 <ul>
     <li>_________________</li>
+    
     <li>_________________</li>
+    
     <li>_________________</li>
 </ul>
 
 <p><strong>ORDEN DEL DÍA:</strong></p>
 <ol>
     <li>_________________</li>
+    
     <li>_________________</li>
+    
     <li>_________________</li>
 </ol>
 
@@ -449,7 +453,9 @@ const plantillas = {
 <p><strong>Descripción del servicio/producto:</strong></p>
 <ul>
     <li>_________________</li>
+    
     <li>_________________</li>
+    
     <li>_________________</li>
 </ul>
 
