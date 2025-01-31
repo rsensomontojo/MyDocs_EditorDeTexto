@@ -328,15 +328,22 @@ const plantillas = {
 <p>En _____________, a ___ de __________ de 20___</p>
 
 <p><strong>REUNIDOS</strong></p>
-<p>De una parte, D./Dña. _________________, mayor de edad, con DNI _____________, y domicilio en _________________ (en adelante, el "Cedente").</p>
+<p>De una parte, D./Dña. _________________, mayor de edad, con DNI _____________,</p>
 
-<p>Y de otra parte, D./Dña. _________________, mayor de edad, con DNI _____________, en nombre y representación de _________________ (en adelante, el "Cesionario").</p>
+<p>y domicilio en _________________ (en adelante, el "Cedente").</p>
+
+<p>Y de otra parte, D./Dña. _________________, mayor de edad, con DNI _____________,</p>
+
+<p>en nombre y representación de _________________ (en adelante, el "Cesionario").</p>
 
 <p><strong>ACUERDAN</strong></p>
 
-<p>1. El Cedente autoriza al Cesionario a utilizar su imagen en material publicitario relacionado con ___________________.</p>
+<p>1. El Cedente autoriza al Cesionario a utilizar su imagen en material </p
 
-<p>2. La presente autorización tiene un ámbito territorial de _________________ y un ámbito temporal de _________________.</p>
+<p>publicitario relacionado con ___________________.</p>
+
+<p>2. La presente autorización tiene un ámbito territorial de _________________ y</p>
+<p>un ámbito temporal de _________________.</p>
 
 <p>3. La contraprestación por la presente cesión será de _________________ euros.</p>
 
@@ -397,9 +404,11 @@ const plantillas = {
 <p>En _____________, a ___ de __________ de 20___</p>
 
 <p><strong>REUNIDOS</strong></p>
-<p>De una parte, D./Dña. _________________, mayor de edad, con DNI _____________, y domicilio en _________________ (en adelante, el "Arrendador").</p>
+<p>De una parte, D./Dña. _________________, mayor de edad, con DNI _____________,</p>
+<p>y domicilio en _________________ (en adelante, el "Arrendador").</p>
 
-<p>Y de otra parte, D./Dña. _________________, mayor de edad, con DNI _____________, y domicilio en _________________ (en adelante, el "Arrendatario").</p>
+<p>Y de otra parte, D./Dña. _________________, mayor de edad, con DNI _____________,</p>
+<p>y domicilio en _________________ (en adelante, el "Arrendatario").</p>
 
 <p><strong>ACUERDAN</strong></p>
 
@@ -418,9 +427,11 @@ const plantillas = {
 
 <p>Estimado/a Sr./Sra. _________________,</p>
 
-<p>Por medio de la presente, le comunico mi decisión de renunciar a mi puesto de trabajo en _________________, efectiva a partir del ___ de __________ de 20___.</p>
+<p>Por medio de la presente, le comunico mi decisión de renunciar a mi puesto</p>
+<p>de trabajo en _________________, efectiva a partir del ___ de __________ de 20___.</p>
 
-<p>Agradezco la oportunidad que me han brindado y los aprendizajes obtenidos durante mi tiempo en la empresa.</p>
+<p>Agradezco la oportunidad que me han brindado y los aprendizajes</p>
+<p>obtenidos durante mi tiempo en la empresa.</p>
 
 <p>Sin otro particular, reciba un cordial saludo,</p>
 
@@ -449,9 +460,11 @@ const plantillas = {
 
 <p>Estimado/a Sr./Sra. _________________,</p>
 
-<p>Por medio de la presente, me complace recomendar a D./Dña. _________________, quien ha trabajado conmigo en _________________ durante ___ años/meses.</p>
+<p>Por medio de la presente, me complace recomendar a D./Dña. _________________,</p>
+<p>quien ha trabajado conmigo en _________________ durante ___ años/meses.</p>
 
-<p>Durante su tiempo en nuestra empresa, demostró ser una persona _________________ (descripción de cualidades).</p>
+<p>Durante su tiempo en nuestra empresa, demostró ser una persona _________________</p>
+<p>(descripción de cualidades).</p>
 
 <p>Sin otro particular, reciba un cordial saludo,</p>
 
@@ -463,9 +476,11 @@ const plantillas = {
 <p>En _____________, a ___ de __________ de 20___</p>
 
 <p><strong>REUNIDOS</strong></p>
-<p>De una parte, D./Dña. _________________, mayor de edad, con DNI _____________, y domicilio en _________________ (en adelante, el "Empleador").</p>
+<p>De una parte, D./Dña. _________________, mayor de edad, con DNI _____________,</p>
+<p>y domicilio en _________________ (en adelante, el "Empleador").</p>
 
-<p>Y de otra parte, D./Dña. _________________, mayor de edad, con DNI _____________, y domicilio en _________________ (en adelante, el "Trabajador").</p>
+<p>Y de otra parte, D./Dña. _________________, mayor de edad, con DNI _____________,</p>
+<p>y domicilio en _________________ (en adelante, el "Trabajador").</p>
 
 <p><strong>ACUERDAN</strong></p>
 
@@ -486,7 +501,8 @@ const plantillas = {
 
 <p>Quiero expresar mi más sincero agradecimiento por _________________.</p>
 
-<p>Su apoyo ha sido fundamental para _________________ (descripción del motivo de agradecimiento).</p>
+<p>Su apoyo ha sido fundamental para _________________ (descripción del</p>
+<p>motivo de agradecimiento).</p>
 
 <p>Sin otro particular, reciba un cordial saludo,</p>
 
@@ -499,7 +515,9 @@ const plantillas = {
 
 <p>Estimado/a Sr./Sra. _________________,</p>
 
-<p>Me complace invitarle a _________________ que se celebrará el ___ de __________ de 20___ en _________________.</p>
+<p>Me complace invitarle a _________________ que se celebrará el ___ de</p>
+<p>Me complace invitarle a _________________ que se celebrará el ___ de</p>
+<p>__________ de 20___ en _________________.</p>
 
 <p>Esperamos contar con su presencia y que disfrute del evento.</p>
 
