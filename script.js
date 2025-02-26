@@ -1,8 +1,3 @@
-// Funciones básicas de edición
-function formatearTexto(comando, valor = null) {
-    document.execCommand(comando, false, valor);
-}
-
 // Funciones de documento
 function nuevoDocumento() {
     if (confirm('¿Estás seguro de querer crear un nuevo documento? Se perderán los cambios no guardados.')) {
@@ -13,7 +8,6 @@ function nuevoDocumento() {
 function abrirArchivo() {
     document.getElementById('entradaArchivo').click();
 }
-
 document.getElementById('entradaArchivo').addEventListener('change', function (e) {
     const archivo = e.target.files[0];
     const lector = new FileReader();
@@ -29,23 +23,6 @@ document.getElementById('entradaArchivo').addEventListener('change', function (e
         lector.readAsText(archivo);
     }
 });
-
-// Funciones de guardado
-function guardarComoTexto() {
-    const texto = document.getElementById('editor-texto').innerText;
-    const nombreArchivo = prompt("Ingresa el nombre del archivo:", "documento.txt");
-    if (nombreArchivo) {
-        descargarArchivo(texto, nombreArchivo, 'text/plain');
-    }
-}
-
-function guardarComoHtml() {
-    const html = document.getElementById('editor-texto').innerHTML;
-    const nombreArchivo = prompt("Ingresa el nombre del archivo:", "documento.html");
-    if (nombreArchivo) {
-        descargarArchivo(html, nombreArchivo, 'text/html');
-    }
-}
 
 async function guardarComoPdf() {
 
@@ -268,32 +245,6 @@ function formatearTexto(comando, valor = null) {
     }
 }
 
-// Agregar un evento para sincronizar el estado de los botones cuando se selecciona texto
-document.getElementById('editor-texto').addEventListener('mouseup', function () {
-    // Sincronizar botones de formato
-    ['bold', 'italic', 'underline', 'strikeThrough'].forEach(comando => {
-        const boton = document.querySelector(`button[onclick="formatearTexto('${comando}')"]`);
-        if (boton) {
-            if (document.queryCommandState(comando)) {
-                boton.classList.add('active');
-            } else {
-                boton.classList.remove('active');
-            }
-        }
-    });
-
-    // Sincronizar botones de alineación
-    ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'].forEach(comando => {
-        const boton = document.querySelector(`button[onclick="formatearTexto('${comando}')"]`);
-        if (boton) {
-            if (document.queryCommandState(comando)) {
-                const botonesAlineacion = boton.parentElement.querySelectorAll('button');
-                botonesAlineacion.forEach(btn => btn.classList.remove('active'));
-                boton.classList.add('active');
-            }
-        }
-    });
-});
 // Agregar un evento para sincronizar el estado de los botones cuando se selecciona texto
 document.getElementById('editor-texto').addEventListener('mouseup', function () {
     // Sincronizar botones de formato
@@ -574,33 +525,6 @@ function manejarCambioPlantilla(select) {
         editor.innerHTML = ''; // Si se selecciona "blanco", limpiamos el editor
     }
 }
-
-// Inicializar el editor con la página en blanco cuando se carga el documento
-document.addEventListener('DOMContentLoaded', function () {
-    cargarPlantilla('blanco');
-
-    // Resto del código de inicialización existente...
-    const editor = document.getElementById('editor-texto');
-
-    editor.addEventListener('dragover', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-    });
-
-    editor.addEventListener('drop', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        const archivos = e.dataTransfer.files;
-        if (archivos.length > 0) {
-            const lector = new FileReader();
-            lector.onload = function (e) {
-                editor.innerHTML = e.target.result;
-            };
-            lector.readAsText(archivos[0]);
-        }
-    });
-});
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', function () {
